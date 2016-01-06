@@ -1,22 +1,15 @@
-﻿(** 
-# F# Data: HTML CSS selectors
-
-This article demonstrates how to use HTML CSS selectors to browse the DOM of parsed HTML files.
-
-Usage of CSS selectors is a very natural way to parse HTML when we come from Web developments.
-The HTML CSS selectors are based on the [JQuery selectors](https://api.jquery.com/category/selectors/).
-*)
-
-#I "packages/FSharp.Data/lib/net40"
+﻿(*** hide ***)
+// This block of code is omitted in the generated HTML documentation. Use 
+// it to define helpers that you do not want to show in the documentation.
+#I "../../packages/FSharp.Data/lib/net40"
 #r "FSharp.Data.dll"
 
-#load "ScrapyFSharp/HtmlCssSelectors.fs"
-
-open FSharp.Data
+#load "../../src/ScrapyFSharp/HtmlCssSelectors.fs"
 
 (** 
 Openning ScrapyFSharp.CssSelectorExtensions module will enable CSS selectors.
 *)
+open FSharp.Data
 open ScrapyFSharp.CssSelectorExtensions
 
 (**

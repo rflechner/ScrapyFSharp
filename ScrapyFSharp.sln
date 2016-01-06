@@ -1,27 +1,46 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ScrapyFSharp", "ScrapyFSharp\ScrapyFSharp.fsproj", "{3B9CA4CE-0360-4E6A-BC4F-5B23DB953151}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{6BDB8C4E-92BF-4A7A-93EA-3F286D0B6BDA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{63297B98-5CED-492C-A5B7-A5B4F73CF142}"
 	ProjectSection(SolutionItems) = preProject
-		.paket\paket.bootstrapper.exe = .paket\paket.bootstrapper.exe
-		.paket\paket.exe = .paket\paket.exe
-		.paket\paket.targets = .paket\paket.targets
+		paket.dependencies = paket.dependencies
+		paket.lock = paket.lock
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{8D71D032-9F10-49C2-ABC7-B7FA021A6CA8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A6A6AF7D-D6E3-442D-9B1E-58CC91879BE1}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ScrapyFSharp", "src\ScrapyFSharp\ScrapyFSharp.fsproj", "{384C11C0-2740-4601-A408-D90C8F7C7713}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "project", "project", "{BF60BC93-E09B-4E5F-9D85-95A519479D54}"
+	ProjectSection(SolutionItems) = preProject
+		build.fsx = build.fsx
+		README.md = README.md
+		RELEASE_NOTES.md = RELEASE_NOTES.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{83F16175-43B1-4C90-A1EE-8E351C33435D}"
+	ProjectSection(SolutionItems) = preProject
+		docs\tools\generate.fsx = docs\tools\generate.fsx
+		docs\tools\templates\template.cshtml = docs\tools\templates\template.cshtml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{8E6D5255-776D-4B61-85F9-73C37AA1FB9A}"
+	ProjectSection(SolutionItems) = preProject
+		docs\content\HtmlCssSelectorsExample.fsx = docs\content\HtmlCssSelectorsExample.fsx
+		docs\content\index.fsx = docs\content\index.fsx
+		docs\content\NetworkExample.fsx = docs\content\NetworkExample.fsx
+		docs\content\tutorial.fsx = docs\content\tutorial.fsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{ED8079DD-2B06-4030-9F0F-DC548F98E1C4}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ScrapyFSharp.Tests", "tests\ScrapyFSharp.Tests\ScrapyFSharp.Tests.fsproj", "{E2D87947-D47D-482E-A121-E5B89DF0E858}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{922F44EC-9303-4268-9528-84631D7F903F}"
 	ProjectSection(SolutionItems) = preProject
 		Files\File1.html = Files\File1.html
 		Files\jquery.smartbanner.css = Files\jquery.smartbanner.css
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{E7526E19-2D35-47A2-A34C-35376AFC5880}"
-	ProjectSection(SolutionItems) = preProject
-		HtmlCssSelectorsExample.fsx = HtmlCssSelectorsExample.fsx
-		NetworkExample.fsx = NetworkExample.fsx
 	EndProjectSection
 EndProject
 Global
@@ -30,12 +49,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3B9CA4CE-0360-4E6A-BC4F-5B23DB953151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B9CA4CE-0360-4E6A-BC4F-5B23DB953151}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B9CA4CE-0360-4E6A-BC4F-5B23DB953151}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B9CA4CE-0360-4E6A-BC4F-5B23DB953151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{384C11C0-2740-4601-A408-D90C8F7C7713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384C11C0-2740-4601-A408-D90C8F7C7713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{384C11C0-2740-4601-A408-D90C8F7C7713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{384C11C0-2740-4601-A408-D90C8F7C7713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2D87947-D47D-482E-A121-E5B89DF0E858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D87947-D47D-482E-A121-E5B89DF0E858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D87947-D47D-482E-A121-E5B89DF0E858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D87947-D47D-482E-A121-E5B89DF0E858}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{83F16175-43B1-4C90-A1EE-8E351C33435D} = {A6A6AF7D-D6E3-442D-9B1E-58CC91879BE1}
+		{8E6D5255-776D-4B61-85F9-73C37AA1FB9A} = {A6A6AF7D-D6E3-442D-9B1E-58CC91879BE1}
+		{E2D87947-D47D-482E-A121-E5B89DF0E858} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
 	EndGlobalSection
 EndGlobal

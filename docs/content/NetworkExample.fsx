@@ -1,7 +1,7 @@
-﻿#I "packages/FSharp.Data/lib/net40"
+﻿#I "../../packages/FSharp.Data/lib/net40"
 #r "FSharp.Data.dll"
 
-#load "ScrapyFSharp/Network.fs"
+#load "../../src/ScrapyFSharp/Network.fs"
 
 open System
 open System.Net

@@ -1,0 +1,23 @@
+type project
+owners
+    rflechner
+authors 
+    rflechner
+projectUrl
+    http://github.com/rflechner/ScrapyFSharp
+iconUrl
+    https://raw.githubusercontent.com/rflechner/ScrapyFSharp/master/docs/files/img/logo.png
+licenseUrl
+    http://github.com/rflechner/ScrapyFSharp/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    scraping FSharp
+summary
+    Reborn of Scrapysharp in FSharp
+description
+    FSharp scraping tools
+
+
