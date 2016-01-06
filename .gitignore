@@ -1,0 +1,5 @@
+.paket/paket.exe
+*packages/*
+.vs/*
+*/bin/*
+*/obj/*
