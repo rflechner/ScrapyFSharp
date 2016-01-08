@@ -69,6 +69,9 @@ subDirectories (directoryInfo templates)
 
 // Copy static files and CSS + JS from F# Formatting
 let copyFiles () =
+
+  CopyFile (content @@ "release-notes.md") (__SOURCE_DIRECTORY__ @@ "../../RELEASE_NOTES.md")
+
   CopyRecursive files output true |> Log "Copying file: "
   ensureDirectory (output @@ "content")
   CopyRecursive (formatting @@ "styles") (output @@ "content") true 
@@ -109,13 +112,18 @@ let buildReference () =
 // Build documentation from `fsx` and `md` files in `docs/content`
 let buildDocumentation () =
 
+  let fsiEvaluator = FsiEvaluator(fsiObj = FsiEvaluatorConfig.CreateNoOpFsiObject())
+  
   // First, process files which are placed in the content root directory.
 
   Literate.ProcessDirectory
     ( content, docTemplate, output, replacements = ("root", root)::info,
       layoutRoots = layoutRootsAll.["en"],
       generateAnchors = true,
-      processRecursive = false)
+      processRecursive = false
+      ,
+      fsiEvaluator = fsiEvaluator
+      )
 
   // And then process files which are placed in the sub directories
   // (some sub directories might be for specific language).
@@ -134,7 +142,10 @@ let buildDocumentation () =
     Literate.ProcessDirectory
       ( dir, docTemplate, output @@ dirname, replacements = ("root", root)::info,
         layoutRoots = layoutRoots,
-        generateAnchors = true )
+        generateAnchors = true
+        , 
+        fsiEvaluator = fsiEvaluator
+        )
 
 // Generate
 copyFiles()
