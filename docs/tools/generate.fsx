@@ -120,10 +120,8 @@ let buildDocumentation () =
     ( content, docTemplate, output, replacements = ("root", root)::info,
       layoutRoots = layoutRootsAll.["en"],
       generateAnchors = true,
-      processRecursive = false
-      ,
-      fsiEvaluator = fsiEvaluator
-      )
+      processRecursive = false,
+      fsiEvaluator = fsiEvaluator )
 
   // And then process files which are placed in the sub directories
   // (some sub directories might be for specific language).
@@ -142,10 +140,8 @@ let buildDocumentation () =
     Literate.ProcessDirectory
       ( dir, docTemplate, output @@ dirname, replacements = ("root", root)::info,
         layoutRoots = layoutRoots,
-        generateAnchors = true
-        , 
-        fsiEvaluator = fsiEvaluator
-        )
+        generateAnchors = true, 
+        fsiEvaluator = fsiEvaluator )
 
 // Generate
 copyFiles()
