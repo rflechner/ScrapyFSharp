@@ -18,7 +18,7 @@ open ScrapyFSharp.CssSelectorExtensions
 
 We will parse links of a Google to search for `FSharp.Data` like in `HTML Parser` article.
 *)
-let doc = HtmlDocument.Load "http://www.google.co.uk/search?q=FSharp.Data"
+let doc = HtmlDocument.Load "https://www.google.com/search?q=FSharp.Data"
 
 (**
 To be sure we get search results, we will parse links in the div with id `search`.
@@ -27,7 +27,7 @@ using the direct descendants selector.
 *)
 
 let links = 
-    doc.CssSelect "div#search > div#ires li.g > div.s div.kv cite"
+    doc.CssSelect "div#search h3.r"
     |> List.map (
         fun n -> 
             match n.InnerText() with
