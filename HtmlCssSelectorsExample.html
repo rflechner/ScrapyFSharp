@@ -62,7 +62,7 @@ using the direct descendants selector.</p>
 <span class="l">8: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 8)" onmouseover="showTip(event, 'fs8', 8)" class="i">links</span> <span class="o">=</span> 
-    <span onmouseout="hideTip(event, 'fs5', 9)" onmouseover="showTip(event, 'fs5', 9)" class="i">doc</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs9', 10)" onmouseover="showTip(event, 'fs9', 10)" class="f">CssSelect</span> <span class="s">&quot;div#search h3.r&quot;</span>
+    <span onmouseout="hideTip(event, 'fs5', 9)" onmouseover="showTip(event, 'fs5', 9)" class="i">doc</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs9', 10)" onmouseover="showTip(event, 'fs9', 10)" class="f">CssSelect</span> <span class="s">&quot;div#search div#ires cite&quot;</span>
     <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs10', 11)" onmouseover="showTip(event, 'fs10', 11)" class="t">List</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs11', 12)" onmouseover="showTip(event, 'fs11', 12)" class="f">map</span> (
         <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs12', 13)" onmouseover="showTip(event, 'fs12', 13)" class="i">n</span> <span class="k">-&gt;</span> 
             <span class="k">match</span> <span onmouseout="hideTip(event, 'fs12', 14)" onmouseover="showTip(event, 'fs12', 14)" class="i">n</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs13', 15)" onmouseover="showTip(event, 'fs13', 15)" class="f">InnerText</span>() <span class="k">with</span>
@@ -73,15 +73,13 @@ using the direct descendants selector.</p>
 </tr>
 </table>
 <p>"li.g &gt; div.s" skips the 4 sub results targeting github pages.</p>
-<table class="pre"><tr><td><pre><code>["http://F# Data: Library for Data Access"; "http://CSV Type Provider";
- "http://F# Data: CSV Parser"; "http://JSON Type Provider";
- "http://XML Type Provider"; "http://fsharp/FSharp.Data · GitHub";
- "http://NuGet Gallery | F# Data 2.2.5";
- "http://Microsoft.FSharp.Data.TypeProviders, espace de noms (F#) - MSDN";
- "http://Guide - Data Access | The F# Software Foundation - Fsharp.org";
- "http://F# Data: New type provider library - Tomas Petricek";
- "http://f# - scripts don't recognize FSharp.Data - Stack Overflow";
- "http://FsLab - Data science and machine learning with F#"]</code></pre></td></tr></table>
+<table class="pre"><tr><td><pre><code>["http://fsharp.github.io/FSharp.Data/"; "https://github.com/fsharp/FSharp.Data";
+ "https://www.nuget.org/packages/FSharp.Data/";
+ "https://msdn.microsoft.com/fr-fr/library/hh362324.aspx";
+ "http://fsharp.org/guides/data-access/";
+ "http://tomasp.net/blog/fsharp-data.aspx/";
+ "http://stackoverflow.com/questions/.../scripts-dont-recognize-fsharp-data";
+ "http://fslab.org/"]</code></pre></td></tr></table>
 <p>Now we could want the pages titles associated with their urls with a <code>List.zip</code></p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
@@ -89,13 +87,24 @@ using the direct descendants selector.</p>
 <span class="l">4: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs16', 24)" onmouseover="showTip(event, 'fs16', 24)" class="i">searchResults</span> <span class="o">=</span> 
-    <span onmouseout="hideTip(event, 'fs5', 25)" onmouseover="showTip(event, 'fs5', 25)" class="i">doc</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs9', 26)" onmouseover="showTip(event, 'fs9', 26)" class="f">CssSelect</span> <span class="s">&quot;div#search &gt; div#ires li.g &gt; h3&quot;</span>
+    <span onmouseout="hideTip(event, 'fs5', 25)" onmouseover="showTip(event, 'fs5', 25)" class="i">doc</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs9', 26)" onmouseover="showTip(event, 'fs9', 26)" class="f">CssSelect</span> <span class="s">&quot;div#search div.g &gt; h3&quot;</span>
     <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs10', 27)" onmouseover="showTip(event, 'fs10', 27)" class="t">List</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs11', 28)" onmouseover="showTip(event, 'fs11', 28)" class="f">map</span> (<span class="k">fun</span> <span onmouseout="hideTip(event, 'fs12', 29)" onmouseover="showTip(event, 'fs12', 29)" class="i">n</span> <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs12', 30)" onmouseover="showTip(event, 'fs12', 30)" class="i">n</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs13', 31)" onmouseover="showTip(event, 'fs13', 31)" class="f">InnerText</span>())
     <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs10', 32)" onmouseover="showTip(event, 'fs10', 32)" class="t">List</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs17', 33)" onmouseover="showTip(event, 'fs17', 33)" class="f">zip</span> (<span onmouseout="hideTip(event, 'fs8', 34)" onmouseover="showTip(event, 'fs8', 34)" class="i">links</span>)
 </code></pre></td>
 </tr>
 </table>
-<table class="pre"><tr><td><pre><code>No value has been returned</code></pre></td></tr></table>
+<table class="pre"><tr><td><pre><code>[("http://fsharp.github.io/FSharp.Data/", "F# Data: Library for Data Access");
+ ("https://github.com/fsharp/FSharp.Data", "fsharp/FSharp.Data · GitHub");
+ ("https://www.nuget.org/packages/FSharp.Data/", "NuGet Gallery | F# Data 2.2.5");
+ ("https://msdn.microsoft.com/fr-fr/library/hh362324.aspx",
+  "Microsoft.FSharp.Data.TypeProviders, espace de noms (F#) - MSDN");
+ ("http://fsharp.org/guides/data-access/",
+  "Guide - Data Access | The F# Software Foundation - Fsharp.org");
+ ("http://tomasp.net/blog/fsharp-data.aspx/",
+  "F# Data: New type provider library - Tomas Petricek");
+ ("http://stackoverflow.com/questions/.../scripts-dont-recognize-fsharp-data",
+  "f# - scripts don't recognize FSharp.Data - Stack Overflow");
+ ("http://fslab.org/", "FsLab - Data science and machine learning with F#")]</code></pre></td></tr></table>
 <h2><a name="Practice-2-Search-FSharp-books-on-Youscribe" class="anchor" href="#Practice-2-Search-FSharp-books-on-Youscribe">Practice 2: Search FSharp books on Youscribe</a></h2>
 <p>We will parse links of a Youscribe to search result for <code>F#</code>.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
@@ -150,7 +159,18 @@ using the direct descendants selector.</p>
 </code></pre></td>
 </tr>
 </table>
-<table class="pre"><tr><td><pre><code>No value has been returned</code></pre></td></tr></table>
+<table class="pre"><tr><td><pre><code>[("http://fsharp.github.io/FSharp.Data/", "F# Data: Library for Data Access");
+ ("https://github.com/fsharp/FSharp.Data", "fsharp/FSharp.Data · GitHub");
+ ("https://www.nuget.org/packages/FSharp.Data/", "NuGet Gallery | F# Data 2.2.5");
+ ("https://msdn.microsoft.com/fr-fr/library/hh362324.aspx",
+  "Microsoft.FSharp.Data.TypeProviders, espace de noms (F#) - MSDN");
+ ("http://fsharp.org/guides/data-access/",
+  "Guide - Data Access | The F# Software Foundation - Fsharp.org");
+ ("http://tomasp.net/blog/fsharp-data.aspx/",
+  "F# Data: New type provider library - Tomas Petricek");
+ ("http://stackoverflow.com/questions/.../scripts-dont-recognize-fsharp-data",
+  "f# - scripts don't recognize FSharp.Data - Stack Overflow");
+ ("http://fslab.org/", "FsLab - Data science and machine learning with F#")]</code></pre></td></tr></table>
 <h3><a name="Attribute-Contains-Selector" class="anchor" href="#Attribute-Contains-Selector">Attribute Contains Selector</a></h3>
 <p>Finds all inputs with a name containing "man".</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
