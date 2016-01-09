@@ -27,7 +27,7 @@ using the direct descendants selector.
 *)
 
 let links = 
-    doc.CssSelect "div#search h3.r"
+    doc.CssSelect "div#search div#ires cite"
     |> List.map (
         fun n -> 
             match n.InnerText() with
@@ -46,7 +46,7 @@ Now we could want the pages titles associated with their urls with a `List.zip`
 *)
 
 let searchResults = 
-    doc.CssSelect "div#search > div#ires li.g > h3"
+    doc.CssSelect "div#search div.g > h3"
     |> List.map (fun n -> n.InnerText())
     |> List.zip (links)
 
