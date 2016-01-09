@@ -42,7 +42,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{922F44EC
 		Files\jquery.smartbanner.css = Files\jquery.smartbanner.css
 	EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ScrapyFSharp.TestApp", "ScrapyFSharp.TestApp\ScrapyFSharp.TestApp.fsproj", "{7894CAC0-B2BA-420B-A25D-3AB362CAD233}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ScrapyFSharp.TestApp", "src\ScrapyFSharp.TestApp\ScrapyFSharp.TestApp.fsproj", "{7894CAC0-B2BA-420B-A25D-3AB362CAD233}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
