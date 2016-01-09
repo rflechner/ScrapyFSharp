@@ -105,7 +105,6 @@ let books =
                 [ for div in html.CssSelect "div.explore-item.explore-doc .document-infos" do
                     yield nodeText div ]
             | None -> List.empty
-        //return! b.DownloadString(Uri "http://www.youscribe.com/")
     } |> Async.RunSynchronously
 
 (** books value is: *)

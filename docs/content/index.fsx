@@ -1,6 +1,7 @@
 (*** hide ***)
 // This block of code is omitted in the generated HTML documentation. Use 
 // it to define helpers that you do not want to show in the documentation.
+#I "../../packages/FSharp.Data/lib/net40"
 #I "../../bin/ScrapyFSharp"
 
 (**
@@ -23,13 +24,36 @@ Documentation
 Example
 -------
 
-This example demonstrates using a function defined in this sample library.
+This example demonstrates how to search old library repo and forks.
 
 *)
+#r "FSharp.Data.dll"
 #r "ScrapyFSharp.dll"
-open ScrapyFSharp
 
-printfn "hello = %i" <| Library.hello 0
+open System
+open System.Net
+open FSharp.Data
+open ScrapyFSharp.CssSelectorExtensions
+open ScrapyFSharp.Network
+
+let b = browser (fun c -> { c with UserAgent=FakeUserAgent.InternetExplorer8 })
+
+let links =
+    async {
+        let! state1 = b.NavigateTo(Uri "https://bitbucket.org/repo/all/1",
+                        Get, HttpRequestData.FormData ["name", "scrapysharp"])
+        let homePage = state1.WebPage()
+        return 
+            match homePage.Html() with 
+            | Some html ->
+                [ for div in html.CssSelect "a.repo-link" do
+                    yield "https://bitbucket.org" + (div.Attribute "href").Value() ]
+            | None -> List.empty
+    } |> Async.RunSynchronously
+
+(** links value is: *)
+
+(*** include-value:links ***)
 
 (**
 Some more info
@@ -56,12 +80,10 @@ consider adding [samples][content] that can be turned into a documentation. You 
 also want to read the [library design notes][readme] to understand how it works.
 
 The library is available under Public Domain license, which allows modification and 
-redistribution for both commercial and non-commercial purposes. For more information see the 
-[License file][license] in the GitHub repository. 
+redistribution for both commercial and non-commercial purposes.
 
   [content]: https://github.com/fsprojects/ScrapyFSharp/tree/master/docs/content
   [gh]: https://github.com/fsprojects/ScrapyFSharp
   [issues]: https://github.com/fsprojects/ScrapyFSharp/issues
   [readme]: https://github.com/fsprojects/ScrapyFSharp/blob/master/README.md
-  [license]: https://github.com/fsprojects/ScrapyFSharp/blob/master/LICENSE.txt
 *)

@@ -466,7 +466,7 @@ module Network =
               AllowMetaRedirect = true
               SendChunked = false
               IgnoreCookies = false
-              UseDefaultCookiesParser = false }
+              UseDefaultCookiesParser = true }
 
     let browser f =
         let b = ScrapingBrowser()

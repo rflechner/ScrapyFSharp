@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{63297B98-5CED-492C-A5B7-A5B4F73CF142}"
 	ProjectSection(SolutionItems) = preProject
@@ -30,7 +30,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{8E6D
 		docs\content\HtmlCssSelectorsExample.fsx = docs\content\HtmlCssSelectorsExample.fsx
 		docs\content\index.fsx = docs\content\index.fsx
 		docs\content\NetworkExample.fsx = docs\content\NetworkExample.fsx
-		docs\content\tutorial.fsx = docs\content\tutorial.fsx
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{ED8079DD-2B06-4030-9F0F-DC548F98E1C4}"
@@ -42,6 +41,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{922F44EC
 		Files\File1.html = Files\File1.html
 		Files\jquery.smartbanner.css = Files\jquery.smartbanner.css
 	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ScrapyFSharp.TestApp", "ScrapyFSharp.TestApp\ScrapyFSharp.TestApp.fsproj", "{7894CAC0-B2BA-420B-A25D-3AB362CAD233}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +58,10 @@ Global
 		{E2D87947-D47D-482E-A121-E5B89DF0E858}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2D87947-D47D-482E-A121-E5B89DF0E858}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2D87947-D47D-482E-A121-E5B89DF0E858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7894CAC0-B2BA-420B-A25D-3AB362CAD233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7894CAC0-B2BA-420B-A25D-3AB362CAD233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7894CAC0-B2BA-420B-A25D-3AB362CAD233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7894CAC0-B2BA-420B-A25D-3AB362CAD233}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
