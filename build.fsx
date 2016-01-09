@@ -173,13 +173,17 @@ Target "NuGet" (fun _ ->
     Paket.Pack(fun p ->
         { p with
             OutputPath = "bin"
+            SpecificVersions = ["FSharp.Data", "2.2.5"]
             Version = release.NugetVersion
+            LockDependencies = true
             ReleaseNotes = toLines release.Notes})
 )
 
 Target "PublishNuget" (fun _ ->
+    let key = File.ReadAllText "G:/nugetkey.txt"
     Paket.Push(fun p ->
         { p with
+            ApiKey = key
             WorkingDir = "bin" })
 )
 
