@@ -82,8 +82,8 @@ also want to read the [library design notes][readme] to understand how it works.
 The library is available under Public Domain license, which allows modification and 
 redistribution for both commercial and non-commercial purposes.
 
-  [content]: https://github.com/fsprojects/ScrapyFSharp/tree/master/docs/content
-  [gh]: https://github.com/fsprojects/ScrapyFSharp
-  [issues]: https://github.com/fsprojects/ScrapyFSharp/issues
-  [readme]: https://github.com/fsprojects/ScrapyFSharp/blob/master/README.md
+  [content]: https://github.com/rflechner/ScrapyFSharp/tree/master/docs/content
+  [gh]: https://github.com/rflechner/ScrapyFSharp
+  [issues]: https://github.com/rflechner/ScrapyFSharp/issues
+  [readme]: https://github.com/rflechner/ScrapyFSharp/blob/master/README.md
 *)
