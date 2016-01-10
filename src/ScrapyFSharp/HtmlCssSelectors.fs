@@ -412,7 +412,7 @@ module CssSelectorExtensions =
         /// Gets descendants matched by Css selector
         [<Extension>]
         static member CssSelect(doc:HtmlDocument, selector) = 
-            CssSelectorExtensions.Select [doc.Body()] selector
+            CssSelectorExtensions.Select (Seq.toList <| doc.Descendants()) selector
         
         /// Gets descendants matched by Css selector
         [<Extension>]
