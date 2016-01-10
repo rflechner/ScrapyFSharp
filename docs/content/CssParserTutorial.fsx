@@ -4,9 +4,7 @@
 #I "../../packages/FSharp.Data/lib/net40"
 #r "FSharp.Data.dll"
 
-#load "../../src/ScrapyFSharp/HtmlCssSelectors.fs"
 #load "../../src/ScrapyFSharp/CssParser.fs"
-#load "../../src/ScrapyFSharp.TestApp/HtmlRasterizer.fs"
 
 (** 
 ### Parsing a CSS file
@@ -52,15 +50,13 @@ div.block1 {
 (**
 Searching a CSS block from a selector
 *)
-let sbCloseActive = 
-    css1.Block "#smartbanner .sb-close:active"
+let sbCloseActive = css1.Block "#smartbanner .sb-close:active"
 
 (**
 sbCloseActive value is
 *)
 
 (*** include-value:sbCloseActive ***)
-
 (**
 Find color property of sbCloseActive
 *)
@@ -76,6 +72,14 @@ color1 value is
 
 (*** include-value:color1 ***)
 
+(*** hide ***)
+#load "../../src/ScrapyFSharp/HtmlCssSelectors.fs"
+#load "../../src/ScrapyFSharp.TestApp/HtmlRasterizer.fs"
+
+open System
+open System.IO
+open ScrapyFSharp
+open ScrapyFSharp.CssParser
 
 (**
 ### Rendering a very simple HTML part
@@ -144,9 +148,11 @@ Checking HTML rendering in the Chrome browser:
 Create a windows form an render a the div with class "main" inside it.
 *)
 
+
 open System.Windows.Forms
 open ScrapyFSharp.HtmlCssSelectors
 open ScrapyFSharp.CssSelectorExtensions
+open HtmlRasterizer
 
 let f = new Form()
 f.Width <- 500
