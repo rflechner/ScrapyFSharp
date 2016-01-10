@@ -151,11 +151,23 @@ module CssParser =
     type CssBlock = 
         { Selector:string
           Properties:CssProperty list }
+        member x.Property p =
+            x.Properties
+            |> List.tryFind (fun i -> i.Name = p)
+            |> function
+                | Some v -> Some v.Value
+                | None -> None
     and CssProperty = 
         { Name:string
           Value:string }
 
-    type StyleSheet = CssBlock list
+    type StyleSheet = 
+        { Blocks:CssBlock list }
+        static member From blocks =
+            { Blocks=blocks }
+        member x.Block s =
+            x.Blocks
+            |> List.tryFind (fun b -> b.Selector = s)
 
     let tokenize txt =
 
@@ -231,5 +243,7 @@ module CssParser =
                 |> loop t
             | _ :: t -> loop t acc
             | [] -> acc |> List.rev
-        loop tokens []
+        loop tokens [] |> StyleSheet.From
+
+    let parseCss = tokenize >> parse
 

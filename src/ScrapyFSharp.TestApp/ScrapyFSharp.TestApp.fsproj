@@ -44,10 +44,13 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="HtmlRasterizer.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <None Include="paket.references" />
